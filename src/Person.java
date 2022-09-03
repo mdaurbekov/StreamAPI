@@ -1,13 +1,13 @@
 class Person {
     private String name;
-    private String family;
+    private String surname;
     private Integer age;
     private Sex sex;
     private Education education;
 
-    public Person(String name, String family, int age, Sex sex, Education education) {
+    public Person(String name, String surname, int age, Sex sex, Education education) {
         this.name = name;
-        this.family = family;
+        this.surname = surname;
         this.age = age;
         this.sex = sex;
         this.education = education;
@@ -17,8 +17,8 @@ class Person {
         return name;
     }
 
-    public String getFamily() {
-        return family;
+    public String getSurname() {
+        return surname;
     }
 
     public Integer getAge() {
@@ -37,7 +37,7 @@ class Person {
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", family='" + family + '\'' +
+                ", family='" + surname + '\'' +
                 ", age=" + age +
                 ", sex=" + sex +
                 ", education=" + education +

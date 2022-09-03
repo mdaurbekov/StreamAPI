@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> names = Arrays.asList("Jack", "Connor", "Harry", "George", "Samuel", "John", "Филе");
-        List<String> families = Arrays.asList("Evans", "Young", "Harris", "Wilson", "Davies", "Adamson", "Brown", "Куриное");
+        List<String> names = Arrays.asList("Jack", "Connor", "Harry", "George", "Samuel", "John" );
+        List<String> families = Arrays.asList("Evans", "Young", "Harris", "Wilson", "Davies", "Adamson", "Brown" );
         Collection<Person> persons = new ArrayList<>();
         for (int i = 0; i < 10_000_000; i++) {
             persons.add(new Person(
@@ -22,17 +22,17 @@ public class Main {
         List<String> list = persons.stream()
                 .filter(person -> person.getAge() > 18)
                 .filter(person -> person.getAge() < 27)
-                .map(Person::getName)
+                .map(Person::getSurname)
                 .toList();
 
         System.out.println("Призывники:");
-        System.out.println(list);
+  //      System.out.println(list);
 
         List<String> workables = persons.stream()
                 .filter(person -> person.getEducation().equals(Education.HIGHER))
                 .filter(person -> person.getAge() > 18)
                 .filter(person -> person.getSex().equals(Sex.MAN) & person.getAge() < 65 || person.getSex().equals(Sex.WOMAN) & person.getAge() < 60)
-                .map(Person::getName)
+                .map(Person::getSurname)
                 .sorted()
                 .toList();
 
